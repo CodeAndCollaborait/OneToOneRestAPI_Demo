@@ -1,7 +1,6 @@
 package com.onetoone.api.one_to_one.config;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,11 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class SwaggerDemo {
 
   @GetMapping(value = "/users")
-  public List<String> getUserAddress() {
-    List<String> userAddressList = new ArrayList<>();
-    userAddressList.add("userOne");
-    userAddressList.add("userTwo");
-    return userAddressList;
+  public HashMap<String, String> getUserAddress() {
+    HashMap<String, String> response = new HashMap<>();
+    response.put("id", "1");
+    response.put("name", "UserName");
+    return response;
+
   }
 
 }
