@@ -45,21 +45,13 @@ public class UserController {
 
   @GetMapping(value = "/users/{user_id}/address")
   public Optional<Address> findAddressOfUser(@PathVariable(value = "user_id") long user_id) throws UserException {
-    //What if address value is null./??? 
-    return addressService.getAddressById(user_id);
+    // What if address value is null./???
+    return addressService.findAddressByID(user_id);
   }
 
-  @PostMapping(value = "/users")
-  public User saveUser(@RequestBody User user) {
-    return userService.addUser(user);
+  @PostMapping(value = "/users/address")
+  public Address insertAddress(@RequestBody Address address) {
+    return addressService.addAddress(address);
   }
-
-  /**
-   * User and Address ... (Address must have user.. but user can be without
-   * address) TODO GET /api/v1/users (list of all user not include Address), TODO
-   * /api/v1/users/{user_id}/address(based on user_id)(user name, user_id, address
-   * info) TODO GET by ID /api/v1/users/{user_id}..user info based on
-   * user_id.(user_id, name) POST, PUT-id DELETE-id
-   */
 
 }

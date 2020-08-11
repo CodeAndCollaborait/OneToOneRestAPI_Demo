@@ -25,11 +25,4 @@ public class UserService {
     return userRepository.findById(id).orElseThrow(() -> new UserException("User not found by the given id: " + id));
   }
 
-  // POST Single User only
-  public User addUser(User user) {
-    return userRepository.save(user);
-  }
-
-  
-
 }

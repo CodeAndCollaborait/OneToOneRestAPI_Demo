@@ -9,9 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 @Entity
 @Table(name = "users")
-public class User {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({ "address" })
+public class User extends AuditModel {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
