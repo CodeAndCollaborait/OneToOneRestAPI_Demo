@@ -12,9 +12,9 @@ public class SwaggerDemo {
   public HashMap<String, String> getUserAddress() {
     HashMap<String, String> response = new HashMap<>();
     response.put("id", "1");
-    response.put("name", "UserName");
+    response.put("name", "Demo User");
+    response.put("address", "100 Main St");
     return response;
-
   }
 
 }

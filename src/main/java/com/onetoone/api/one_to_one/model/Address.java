@@ -6,10 +6,12 @@ import javax.persistence.Id;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
 @Table(name = "address")
-public class Address {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class Address extends AuditModel {
 
   @Id
   @Column(name = "id")
